@@ -1,0 +1,60 @@
+//gugudan.c 구구단 출력
+//함수는 선언(이런 함수가 있다라고만 알려주는 역할: 사용형식을 제공), 정의(실제 함수의 내용), 호출(사용)
+//선언형식: 리턴타입 함수명(매개변수의 형식, ...);
+//타입을 사용안할 경우 void (무치형, 다치형) 사용
+//정의형식 
+//리턴타입 함수명(매개변수의 형식, ...){
+//		함수의 프로그램 코드
+//		...
+//		[return {변수;값;수식}];
+// }
+// 호출
+// [변수=]함수명([매개변수]);
+// 정의를 main함수 앞에 쓸경우 선언 생략가능하다.
+// 함수를 사용하기 전에 선언이나 정의가 되어있어야 한다.
+// 두가지 형식: 선언-사용-정의, 정의-사용
+// 목적: 기능 분할, 코드 재사용(기능단위로 분할)
+//매개변수, 리턴값이 없는 경우
+
+#include <stdio.h>
+
+//선언
+void title(void);//title()로 사용
+void gugu(void);//gugu()로 사용
+void line(void);//line()로 사용
+
+//사용
+int main(void) { //증-메인제목-줄-각 단체목 출력-중-구구단출력-줄
+	title();
+	gugu();
+	line();
+	
+	return 0;
+}
+
+//정의
+void title(void) {
+	line();
+	for (int i = 1; i <= 25; i++)printf(" ");
+	printf("구구단");
+	printf("\n");
+	line();
+	for (int i = 2; i < 10; i++)printf("  %ddan ", i);
+	printf("\n");
+	line();
+	return;
+}
+void gugu(void) {
+	for (int i = 1; i <= 9; i++) { //행
+		for (int j = 2; j <= 9; j++) { //열
+			printf("%d*%d=%2d ", j, i, i * j);
+		}
+		printf("\n");
+	}
+	return;
+}
+void line(void) {
+	for (int i = 1; i <= 55; i++)printf("=");
+	printf("\n");
+	return;
+}
