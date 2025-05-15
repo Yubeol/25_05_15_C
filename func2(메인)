@@ -1,0 +1,43 @@
+//func2_sub.c
+#include <stdio.h>
+#include <stdlib.h>
+
+int menuIn(void) {
+    int sel;
+    printf("=== menu ===\n");
+    printf("1.짜장면\n");
+    printf("2.짬뽕\n");
+    printf("3.우동[품절]\n");
+    printf("4.볶음밥\n");
+    printf("5.탕수육\n");
+    printf("0.종료\n");
+    printf("==========\n");
+    printf("선택: ");
+    scanf_s("%d", &sel); // 비주얼 스튜디오에서 사용되는 안전한 입력 방식
+
+    return sel;
+}
+
+
+void outFood(int sel) { // 매개변수 sel이 이미 전달되므로, 변수 선언은 불필요
+    switch (sel) {
+    case 0:
+        printf("감사합니다.\n");
+        break;
+    case 1:
+        printf("짜장면 %d그릇, 가격 %d원 * %d = %d원\n", 1, 5000, 1, 5000 * 1);
+        break;
+    case 2:
+        printf("짬뽕 %d그릇, 가격 %d원 * %d = %d원\n", 1, 6000, 1, 6000 * 1);
+        break;
+    case 4:
+        printf("볶음밥 %d그릇, 가격 %d원 * %d = %d원\n", 1, 8000, 1, 8000 * 1);
+        break;
+    case 5:
+        printf("탕수육 %d그릇, 가격 %d원 * %d = %d원\n", 1, 16000, 1, 16000 * 1);
+        break;
+    default:
+        printf("잘못 선택하셨습니다. 다시 선택해 주세요.\n");
+    }
+    return;
+}
