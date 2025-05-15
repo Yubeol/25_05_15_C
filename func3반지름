@@ -1,0 +1,25 @@
+//func3.c
+//반지름 입력 받아서 원 넓이와 원 둘레를 출력하시오.
+//단, 입력함수, 둘레함수, 출력함수를 별도로 작성할 것
+
+#include <stdio.h>
+
+
+float getRadius(void); 
+float cArea(float radius); 
+float cference(float radius);
+void displayResults(float radius, float area, float circumference); 
+
+int  main(void) {
+	float radius, area, circumference;
+
+	radius = getRadius();
+
+	area = cArea(radius);
+	circumference = cference(radius);
+
+	displayResults(radius, area, circumference);
+
+	return 0;
+}
+
