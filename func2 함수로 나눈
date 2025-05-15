@@ -1,0 +1,20 @@
+//func2_menu.c
+#include <stdio.h>
+#include <stdlib.h>
+
+int menuIn(void);
+void outFood(int);
+
+int main(void) {
+    int sel;
+
+    do {
+        system("cls");
+        sel = menuIn();   // 메뉴 선택을 입력 받음
+        outFood(sel);      // 선택된 메뉴에 대한 출력을 수행
+        system("pause");   // 일시 정지
+    } while (sel != 0);   // '0'을 입력할 때까지 반복
+
+    return 0;
+}
+
