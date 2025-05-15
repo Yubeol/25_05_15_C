@@ -1,0 +1,25 @@
+//func3_sub.c
+//반지름 입력 받아서 원 넓이와 원 둘레를 출력하시오.
+//단, 입력함수, 둘레함수, 출력함수를 별도로 작성할 것
+#include <stdio.h>
+#include <math.h>
+#define PI 3.14
+
+float getRadius(void) {
+	float radius;
+	printf("반지름: ");
+	scanf_s("%f", &radius);
+	return radius;
+}
+float cArea(float radius) {
+	return PI * radius * radius;
+}
+float cference(float radius) {
+	return 2 * PI * radius;
+}
+void displayResults(float radius, float area, float circumference) {
+	printf("\n반지름: %.2f\n", radius);
+	printf("원의 넓이: %.2f\n", area);
+	printf("원의 둘레: %.2f\n", circumference);
+	return;
+}
